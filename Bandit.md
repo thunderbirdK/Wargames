@@ -221,9 +221,8 @@ bandit17@melissa:~$ ls
 passwords.new  passwords.old
 bandit17@melissa:~$ diff passwords.new  passwords.old
 42c42
-< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
----
-> bECYSoXjOeGseirUCztuCBDF3xXqE7By
+kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+bECYSoXjOeGseirUCztuCBDF3xXqE7By
 
 Password we need is : kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
 
@@ -358,7 +357,7 @@ next password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
 ### Level - 24 ###
 
-SSH using bandit23@bandit.labs.overthewire.org
+SSH using bandit23@bandit.labs.overthewire.org 
 Password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
 bandit23@melissa:~$ cd /etc/cron.d
@@ -458,3 +457,30 @@ bandit23@melissa:/var/spool/bandit24/pass$ cat pass
 UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 
 Next password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+### Level - 25 ###
+
+SSH using bandit24@bandit.labs.overthewire.org
+Password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+They say that pin we have to enter the correct pin code to get the password and its a 4 digit one.we cannot enter all 1000 to 9999 combinations by hand. what we can use a script or a loop.
+
+for i in $(seq -f "%04g" 1000 9999); do echo 'UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ '${i} | nc localhost 30002; done
+
+password is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+
+### Level - 65 ###
+
+
+SSH using bandit25@bandit.labs.overthewire.org
+Password: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+once we logged in it will close the connection
+what u can do is bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+
+then cat /usr/bin/showtext
+
+then ssh -i ~/ bandit26@localhost again. This time I got the pause at "More". I pressed "v" and was presented with a vi interface. I then typed :r /etc/bandit_pass/bandit26
+
+password  5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
